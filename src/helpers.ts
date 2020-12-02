@@ -17,7 +17,7 @@ export function _objectKeys(obj) {
         return keys;
     }
     if (Object.keys) {
-        return Object.keys(obj);
+        return Object.keys(obj).filter(key => key !== "__ember_meta__");;
     }
     var keys = [];
     for (var i in obj) {
@@ -25,7 +25,7 @@ export function _objectKeys(obj) {
             keys.push(i);
         }
     }
-    return keys;
+    return keys.filter(key => key !== "__ember_meta__");
 };
 /**
 * Deeply clone the object.

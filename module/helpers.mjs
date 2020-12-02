@@ -29,7 +29,8 @@ export function _objectKeys(obj) {
         return keys;
     }
     if (Object.keys) {
-        return Object.keys(obj);
+        return Object.keys(obj).filter(function (key) { return key !== "__ember_meta__"; });
+        ;
     }
     var keys = [];
     for (var i in obj) {
@@ -37,7 +38,7 @@ export function _objectKeys(obj) {
             keys.push(i);
         }
     }
-    return keys;
+    return keys.filter(function (key) { return key !== "__ember_meta__"; });
 }
 ;
 /**
