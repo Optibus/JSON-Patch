@@ -31,10 +31,6 @@ function arrayIncludes(array, value) {
     var length = array == null ? 0 : array.length;
     return !!length && baseIndexOf(array, value, 0) > -1;
 }
-function cacheHas(cache, key) {
-    return cache.has(key);
-}
-var LARGE_ARRAY_SIZE = 200;
 function lodashDifference(array, values) {
     var includes = arrayIncludes;
     var isCommon = true;
